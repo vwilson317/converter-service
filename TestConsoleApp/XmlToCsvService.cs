@@ -11,7 +11,7 @@ using Xml2CSharp;
 
 public static class XmlToCsvService
 {
-    public static void ConvertXmlsToCsvs(string inputDirectoryPath, string schemaFilePath)
+    public static string ConvertXmlsToCsvs(string inputDirectoryPath, string schemaFilePath)
     {
         // Load schema file
         XmlSchemaSet schemaSet = new XmlSchemaSet();
@@ -35,10 +35,11 @@ public static class XmlToCsvService
         string[] xmlFilePaths = Directory.GetFiles(inputDirectoryPath, "*.xml");
 
         // Convert each XML file to a CSV file
+        var csvFiles = new List<string>();
         foreach (string xmlFilePath in xmlFilePaths)
         {
             string csvFilePath = Path.ChangeExtension(xmlFilePath, "csv");
-
+            csvFiles.Add(csvFilePath);
             // Read XML elements and write CSV rows
             using (XmlReader reader = XmlReader.Create(xmlFilePath, readerSettings))
             using (var writer = new StreamWriter(csvFilePath))
@@ -59,7 +60,10 @@ public static class XmlToCsvService
                 // Write CSV rows
                 csv.WriteRecords(new[] { row });
             }
+
         }
+        return string.Join(Environment.NewLine, csvFiles);
+
     }
 
     private static void ValidationCallback(object sender, ValidationEventArgs e)
@@ -121,12 +125,12 @@ public static class XmlToCsvService
             }
             else
             {
-                var items2 = obj as IEnumerable<Z1EDL15>;
-                if (items2 != null)
+                var castedItems = obj as IEnumerable<Z1EDL15>;
+                if (castedItems != null)
                 {
                     //these will have two more props after that we'll ignore for now
                     var valueForCHARC = propNames[i + 1].Split("=")[1];
-                    return items2.SelectMany(x => x.Z1CUVAL).FirstOrDefault(z1 => z1.CHARC == valueForCHARC.ToUpper()).VALUE;
+                    return castedItems.SelectMany(x => x.Z1CUVAL).FirstOrDefault(z1 => z1.CHARC == valueForCHARC.ToUpper()).VALUE;
                 }
 
                 var prop = obj.GetType().GetProperty(propName);
