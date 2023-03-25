@@ -1,0 +1,383 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ZCUST">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="IDOC">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EDI_DC40">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="TABNAM"/>
+                    <xs:element type="xs:short" name="MANDT"/>
+                    <xs:element type="xs:int" name="DOCNUM"/>
+                    <xs:element type="xs:short" name="DOCREL"/>
+                    <xs:element type="xs:byte" name="STATUS"/>
+                    <xs:element type="xs:byte" name="DIRECT"/>
+                    <xs:element type="xs:byte" name="OUTMOD"/>
+                    <xs:element type="xs:string" name="IDOCTYP"/>
+                    <xs:element type="xs:string" name="CIMTYP"/>
+                    <xs:element type="xs:string" name="MESTYP"/>
+                    <xs:element type="xs:string" name="MESCOD"/>
+                    <xs:element type="xs:string" name="SNDPOR"/>
+                    <xs:element type="xs:string" name="SNDPRT"/>
+                    <xs:element type="xs:string" name="SNDPRN"/>
+                    <xs:element type="xs:string" name="RCVPOR"/>
+                    <xs:element type="xs:string" name="RCVPRT"/>
+                    <xs:element type="xs:string" name="RCVPFC"/>
+                    <xs:element type="xs:int" name="RCVPRN"/>
+                    <xs:element type="xs:int" name="CREDAT"/>
+                    <xs:element type="xs:int" name="CRETIM"/>
+                    <xs:element type="xs:long" name="SERIAL"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:byte" name="SEGMENT"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="E1EDT20">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:int" name="TKNUM"/>
+                    <xs:element type="xs:string" name="SHTYP"/>
+                    <xs:element type="xs:byte" name="ABFER"/>
+                    <xs:element type="xs:byte" name="ABWST"/>
+                    <xs:element type="xs:byte" name="BFART"/>
+                    <xs:element type="xs:byte" name="VSART"/>
+                    <xs:element type="xs:byte" name="LAUFK"/>
+                    <xs:element type="xs:string" name="ROUTE"/>
+                    <xs:element type="xs:string" name="EXTI1"/>
+                    <xs:element type="xs:byte" name="STTRG"/>
+                    <xs:element type="xs:string" name="DTMEG"/>
+                    <xs:element type="xs:string" name="DTMEV"/>
+                    <xs:element type="xs:float" name="DISTZ"/>
+                    <xs:element type="xs:float" name="FAHZT"/>
+                    <xs:element type="xs:float" name="GESZT"/>
+                    <xs:element type="xs:string" name="FBGST"/>
+                    <xs:element type="xs:string" name="STERM_DONE"/>
+                    <xs:element type="xs:string" name="SDABW"/>
+                    <xs:element type="xs:byte" name="GESZTD"/>
+                    <xs:element type="xs:byte" name="FAHZTD"/>
+                    <xs:element type="xs:byte" name="GESZTDA"/>
+                    <xs:element type="xs:byte" name="FAHZTDA"/>
+                    <xs:element type="xs:float" name="WARZTD"/>
+                    <xs:element type="xs:float" name="WARZTDA"/>
+                    <xs:element type="xs:int" name="EXT_FREIGHT_ORDER"/>
+                    <xs:element type="xs:string" name="EXT_TM_SYS"/>
+                    <xs:element name="Z1EDIDC">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="MSGFN"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:byte" name="SEGMENT"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Z1EDT20" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="QUALF"/>
+                          <xs:element type="xs:string" name="VALUE" minOccurs="0"/>
+                          <xs:element type="xs:string" name="VALUE2" minOccurs="0"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:byte" name="SEGMENT" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="E1EDT22">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="SHTYP_BEZ"/>
+                          <xs:element type="xs:string" name="BFART_BEZ"/>
+                          <xs:element type="xs:string" name="VSART_BEZ"/>
+                          <xs:element type="xs:string" name="LAUFK_BEZ"/>
+                          <xs:element type="xs:string" name="ROUTE_BEZ"/>
+                          <xs:element type="xs:string" name="STTRG_BEZ"/>
+                          <xs:element type="xs:string" name="FBGST_BEZ"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:byte" name="SEGMENT"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="E1ADRM4" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="PARTNER_Q"/>
+                          <xs:element type="xs:string" name="PARTNER_ID"/>
+                          <xs:element type="xs:string" name="LANGUAGE"/>
+                          <xs:element type="xs:string" name="NAME1"/>
+                          <xs:element type="xs:string" name="STREET1"/>
+                          <xs:element type="xs:short" name="POSTL_COD1"/>
+                          <xs:element type="xs:string" name="CITY1"/>
+                          <xs:element type="xs:long" name="TELEFAX" minOccurs="0"/>
+                          <xs:element type="xs:string" name="E_MAIL" minOccurs="0"/>
+                          <xs:element type="xs:string" name="COUNTRY1"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:byte" name="SEGMENT" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="E1EDT10" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="QUALF"/>
+                          <xs:element type="xs:int" name="NTANF"/>
+                          <xs:element type="xs:byte" name="NTANZ"/>
+                          <xs:element type="xs:int" name="NTEND"/>
+                          <xs:element type="xs:int" name="NTENZ"/>
+                          <xs:element type="xs:int" name="ISDD"/>
+                          <xs:element type="xs:int" name="ISDZ"/>
+                          <xs:element type="xs:int" name="IEDD"/>
+                          <xs:element type="xs:int" name="IEDZ"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:byte" name="SEGMENT" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="E1TXTH6" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="TDOBJECT"/>
+                          <xs:element type="xs:string" name="TDOBNAME"/>
+                          <xs:element type="xs:string" name="TDID"/>
+                          <xs:element type="xs:string" name="TDSPRAS"/>
+                          <xs:element type="xs:string" name="LANGUA_ISO"/>
+                          <xs:element name="E1TXTP6" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="TDFORMAT"/>
+                                <xs:element type="xs:string" name="TDLINE"/>
+                              </xs:sequence>
+                              <xs:attribute type="xs:byte" name="SEGMENT" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:byte" name="SEGMENT" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="E1EDK33">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="TSNUM"/>
+                          <xs:element type="xs:byte" name="TSRFO"/>
+                          <xs:element type="xs:byte" name="TSTYP"/>
+                          <xs:element type="xs:byte" name="LAUFK"/>
+                          <xs:element type="xs:float" name="DISTZ"/>
+                          <xs:element type="xs:float" name="FAHZT"/>
+                          <xs:element type="xs:float" name="GESZT"/>
+                          <xs:element type="xs:byte" name="GESZTD"/>
+                          <xs:element type="xs:byte" name="FAHZTD"/>
+                          <xs:element type="xs:byte" name="GESZTDA"/>
+                          <xs:element type="xs:byte" name="FAHZTDA"/>
+                          <xs:element type="xs:string" name="FRKRL"/>
+                          <xs:element type="xs:string" name="SKALSM"/>
+                          <xs:element type="xs:string" name="FBSTA"/>
+                          <xs:element type="xs:float" name="WARZTD"/>
+                          <xs:element type="xs:float" name="WARZTDA"/>
+                          <xs:element name="E1EDT50">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="TSTYP_BEZ"/>
+                                <xs:element type="xs:string" name="LAUFK_BEZ"/>
+                                <xs:element type="xs:string" name="FBSTA_BEZ"/>
+                              </xs:sequence>
+                              <xs:attribute type="xs:byte" name="SEGMENT"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="E1EDT44" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:byte" name="QUALI"/>
+                                <xs:element type="xs:string" name="KNOTE"/>
+                                <xs:element type="xs:string" name="WERKS" minOccurs="0"/>
+                              </xs:sequence>
+                              <xs:attribute type="xs:byte" name="SEGMENT" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:byte" name="SEGMENT"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="E1EDT47">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="ADD02"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:byte" name="SEGMENT"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="E1EDL20">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:long" name="VBELN"/>
+                          <xs:element type="xs:string" name="VSTEL"/>
+                          <xs:element type="xs:short" name="VKORG"/>
+                          <xs:element type="xs:string" name="LGNUM"/>
+                          <xs:element type="xs:string" name="ABLAD"/>
+                          <xs:element type="xs:string" name="INCO1"/>
+                          <xs:element type="xs:string" name="INCO2"/>
+                          <xs:element type="xs:string" name="ROUTE"/>
+                          <xs:element type="xs:float" name="BTGEW"/>
+                          <xs:element type="xs:float" name="NTGEW"/>
+                          <xs:element type="xs:string" name="GEWEI"/>
+                          <xs:element type="xs:float" name="VOLUM"/>
+                          <xs:element type="xs:string" name="VOLEH"/>
+                          <xs:element type="xs:byte" name="ANZPK"/>
+                          <xs:element type="xs:int" name="PODAT"/>
+                          <xs:element type="xs:int" name="POTIM"/>
+                          <xs:element name="Z1EDL20" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:byte" name="QUALF"/>
+                                <xs:element type="xs:string" name="VALUE" minOccurs="0"/>
+                                <xs:element type="xs:string" name="VALUE2" minOccurs="0"/>
+                              </xs:sequence>
+                              <xs:attribute type="xs:byte" name="SEGMENT" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="E1ADRM1" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="PARTNER_Q"/>
+                                <xs:element type="xs:string" name="PARTNER_ID"/>
+                                <xs:element type="xs:string" name="LANGUAGE"/>
+                                <xs:element type="xs:string" name="FORMOFADDR" minOccurs="0"/>
+                                <xs:element type="xs:string" name="NAME1"/>
+                                <xs:element type="xs:string" name="NAME2" minOccurs="0"/>
+                                <xs:element type="xs:string" name="STREET1" minOccurs="0"/>
+                                <xs:element type="xs:int" name="POSTL_COD1" minOccurs="0"/>
+                                <xs:element type="xs:string" name="CITY1" minOccurs="0"/>
+                                <xs:element type="xs:int" name="TELEX" minOccurs="0"/>
+                                <xs:element type="xs:string" name="E_MAIL" minOccurs="0"/>
+                                <xs:element type="xs:string" name="TELEPHONE1" minOccurs="0"/>
+                                <xs:element type="xs:string" name="TELEFAX" minOccurs="0"/>
+                                <xs:element type="xs:string" name="COUNTRY1"/>
+                                <xs:element name="E1ADRE1" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:short" name="EXTEND_Q"/>
+                                      <xs:element type="xs:int" name="EXTEND_D"/>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:byte" name="SEGMENT" use="optional"/>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:byte" name="SEGMENT" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="E1EDT13" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:byte" name="QUALF"/>
+                                <xs:element type="xs:int" name="NTANF"/>
+                                <xs:element type="xs:int" name="NTANZ"/>
+                                <xs:element type="xs:int" name="NTEND"/>
+                                <xs:element type="xs:int" name="NTENZ"/>
+                                <xs:element type="xs:string" name="TZONE_BEG" minOccurs="0"/>
+                                <xs:element type="xs:int" name="ISDD"/>
+                                <xs:element type="xs:byte" name="ISDZ"/>
+                                <xs:element type="xs:int" name="IEDD"/>
+                                <xs:element type="xs:byte" name="IEDZ"/>
+                                <xs:element type="xs:string" name="TZONE_END" minOccurs="0"/>
+                              </xs:sequence>
+                              <xs:attribute type="xs:byte" name="SEGMENT" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="E1EDL24">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:byte" name="POSNR"/>
+                                <xs:element type="xs:string" name="MATNR"/>
+                                <xs:element type="xs:string" name="MATWA"/>
+                                <xs:element type="xs:string" name="ARKTX"/>
+                                <xs:element type="xs:string" name="MATKL"/>
+                                <xs:element type="xs:string" name="WERKS"/>
+                                <xs:element type="xs:short" name="LGORT"/>
+                                <xs:element type="xs:string" name="KDMAT"/>
+                                <xs:element type="xs:float" name="LFIMG"/>
+                                <xs:element type="xs:string" name="VRKME"/>
+                                <xs:element type="xs:float" name="LGMNG"/>
+                                <xs:element type="xs:string" name="MEINS"/>
+                                <xs:element type="xs:float" name="NTGEW"/>
+                                <xs:element type="xs:float" name="BRGEW"/>
+                                <xs:element type="xs:string" name="GEWEI"/>
+                                <xs:element type="xs:float" name="VOLUM"/>
+                                <xs:element type="xs:string" name="VOLEH"/>
+                                <xs:element type="xs:short" name="VKBUR"/>
+                                <xs:element type="xs:byte" name="VTWEG"/>
+                                <xs:element type="xs:string" name="SPART"/>
+                                <xs:element type="xs:byte" name="GRKOR"/>
+                                <xs:element type="xs:string" name="MFRGR"/>
+                                <xs:element type="xs:byte" name="POSEX"/>
+                                <xs:element type="xs:byte" name="VFDAT"/>
+                                <xs:element type="xs:byte" name="EXPIRY_DATE_EXT"/>
+                                <xs:element type="xs:int" name="VGBEL"/>
+                                <xs:element type="xs:byte" name="VGPOS"/>
+                                <xs:element type="xs:float" name="ORMNG"/>
+                                <xs:element type="xs:byte" name="EXPIRY_DATE_EXT_B"/>
+                                <xs:element name="Z1EDL25" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:byte" name="QUALF"/>
+                                      <xs:element type="xs:string" name="VALUE" minOccurs="0"/>
+                                      <xs:element type="xs:string" name="VALUE2" minOccurs="0"/>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:byte" name="SEGMENT" use="optional"/>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Z1EDL15" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:byte" name="QUALF"/>
+                                      <xs:element type="xs:long" name="VALUE"/>
+                                      <xs:element name="Z1CUVAL" maxOccurs="unbounded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element type="xs:float" name="INST_ID"/>
+                                            <xs:element type="xs:string" name="CHARC"/>
+                                            <xs:element type="xs:string" name="CHARC_TXT"/>
+                                            <xs:element type="xs:string" name="VALUE"/>
+                                            <xs:element type="xs:string" name="VALUE_TXT" minOccurs="0"/>
+                                            <xs:element type="xs:byte" name="AUTHOR" minOccurs="0"/>
+                                          </xs:sequence>
+                                          <xs:attribute type="xs:byte" name="SEGMENT" use="optional"/>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:byte" name="SEGMENT" use="optional"/>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="E1TXTH9" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="TDOBJECT"/>
+                                      <xs:element type="xs:long" name="TDOBNAME"/>
+                                      <xs:element type="xs:string" name="TDID"/>
+                                      <xs:element type="xs:string" name="TDSPRAS"/>
+                                      <xs:element type="xs:string" name="LANGUA_ISO"/>
+                                      <xs:element name="E1TXTP9" maxOccurs="unbounded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element type="xs:string" name="TDFORMAT"/>
+                                            <xs:element type="xs:string" name="TDLINE"/>
+                                          </xs:sequence>
+                                          <xs:attribute type="xs:byte" name="SEGMENT" use="optional"/>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:byte" name="SEGMENT" use="optional"/>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:byte" name="SEGMENT"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:byte" name="SEGMENT"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:byte" name="SEGMENT"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:byte" name="BEGIN"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
